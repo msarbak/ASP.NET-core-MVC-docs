@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>
+    Ogrenci kontrollerındaki index view'i
+</h1>
+
+<form action="../Ogrenci/Kayit" method="post">
+    <!-- method="post" ustte cikmasin diye ekelme yapiyoruz-->
+    <table>
+        <tr>
+            <td>Ad</td>
+            <td>:</td>
+            <td><input type="text" name="OgrAd"/></td> <!--name yazmazsak lgodnerdigimiz bilgiler karsıya gitmez -->
+        </tr>
+        <tr>
+            <td>Soyad</td>
+            <td>:</td>
+            <td><input type="text" name="OgrSoyad" /></td> <!--name yazmazsak lgodnerdigimiz bilgiler karsıya gitmez -->
+        </tr>
+        <tr>
+            <td>Ogrenci no</td>
+            <td>:</td>
+            <td><input type="text" name="OgrNo"/></td> <!--name yazmazsak lgodnerdigimiz bilgiler karsıya gitmez -->
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="submit" value="KAYIT"/>
+            </td>
+        </tr>
+    </table>
+</form> <!--get methodu ile bilgi gonderdi default olarak, get url de cikar,post arakplanda gonderilir, bıuyuk boyutlu bilgiler, ozel bilgiler post la gider-->
