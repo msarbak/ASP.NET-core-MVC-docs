@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication1.Models.Ogrenci>
+
+@{
+    ViewData["Title"] = "ListeOto";
+}
+
+<h1>ListeOto</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrSoyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrNo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.OgrNo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.OgrNo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.OgrNo })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

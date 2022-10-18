@@ -62,7 +62,8 @@ namespace WebApplication1.Controllers
         public IActionResult OgrenciListele()
         {
             //return Ogrenciler[0].OgrAd + " " + Ogrenciler[0].OgrSoyad + " " + Ogrenciler[0].OgrNo;
-            return View(Ogrenciler);
+            //return View(Ogrenciler);
+            return View("ListeOto",Ogrenciler);
         }
     }
 }
