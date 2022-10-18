@@ -4,3 +4,21 @@
 @{
 }
 
+@model List<WebApplication1.Models.Ogrenci>   
+
+    <table>
+        <tr>
+            <td>Öğrenci Adı: </td>
+            <td>Öğrenci Soyadı: </td>
+            <td>Öğrenci No: </td>
+        </tr>
+
+        @foreach (var ogr in Model)
+        {
+            <tr>
+                <td>@ogr.OgrAd</td>
+                <td>@ogr.OgrSoyad</td>
+                <td>@ogr.OgrNo</td>
+            </tr>
+        }
+    </table>
