@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-//using WebApplication1 Models;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
     public class OgrenciController : Controller
     {
+        //hafizadas sabit kalması icin static  
+        static List<Ogrenci> Ogrenciler = new List<Ogrenci>(); 
         public IActionResult Index()
         {
             return View(); 
@@ -45,10 +47,22 @@ namespace WebApplication1.Controllers
         //iki yoldanda olabilir, ancak bos kayit kismi icin parametreli kullkanmamız lzim
 
         [HttpPost]
-        public IActionResult Kayit(Models.Ogrenci ogr)
+        /*public IActionResult Kayit(Ogrenci ogr)
         {
             return View(ogr); //Kayit cshtml ye gidecek, modeli gonderdim
             //return "Form Kayit: (Modelli)" + ogr.OgrAd + " " + ogr.OgrSoyad + " " + ogr.OgrNo;
+        }
+        */
+        public IActionResult Kayit(Ogrenci ogr)
+        {
+            Ogrenciler.Add(ogr);
+            return RedirectToAction("OgrenciListele", "Ogrenci");
+        }
+
+        public IActionResult OgrenciListele()
+        {
+            //return Ogrenciler[0].OgrAd + " " + Ogrenciler[0].OgrSoyad + " " + Ogrenciler[0].OgrNo;
+            return View(Ogrenciler);
         }
     }
 }
